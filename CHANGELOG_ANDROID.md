@@ -1,5 +1,67 @@
 # Changelog
 
+## [1.47.188](https://github.com/brave/brave-browser/releases/tag/v1.47.188)
+
+ - Reverted [#27757](https://github.com/brave/brave-browser/issues/27757) which was causing issues on certain Samsung devices due to old widgets not being removed from the manifest file. ([#28118](https://github.com/brave/brave-browser/issues/28118))
+ - Fixed crash when scrolling through the Brave News feed in certain cases. ([#28086](https://github.com/brave/brave-browser/issues/28086))
+
+## [1.47.186](https://github.com/brave/brave-browser/releases/tag/v1.47.186)
+
+ - Added Ramp network support in Brave Wallet. ([#27678](https://github.com/brave/brave-browser/issues/27678))
+ - Fixed crash when creating a Brave Wallet in certain cases. ([#27805](https://github.com/brave/brave-browser/issues/27805))
+ - Fixed crash when displaying the Brave search widget onboarding in certain cases. ([#27903](https://github.com/brave/brave-browser/issues/27903))
+ - Fixed some "$removeparam" filter rules not being applied to document requests. ([#27819](https://github.com/brave/brave-browser/issues/27819))
+ - Fixed crash in "DomainBlockNavigationThrottle" in certain cases when adding "$removeparam" rules into "brave://settings/shields/filters". ([#27791](https://github.com/brave/brave-browser/issues/27791))
+ - Fixed intermittent crash when accessing DApps. ([#28015](https://github.com/brave/brave-browser/issues/28015))
+ - Fixed crash when scrolling through the Brave News feed in certain cases. ([#27836](https://github.com/brave/brave-browser/issues/27836))
+ - Fixed startup crash when attempting to access the ads notification channel when not created in certain cases. ([#27982](https://github.com/brave/brave-browser/issues/27982))
+ - Fixed crash when updating settings menu icon state in certain cases. ([#27856](https://github.com/brave/brave-browser/issues/27856))
+ - Fixed crash when accessing Brave VPN billing in certain cases. ([#27751](https://github.com/brave/brave-browser/issues/27751))
+ - Fixed "Top Tile" icons being cut off within the quick action widget on certain devices. ([#26645](https://github.com/brave/brave-browser/issues/26645))
+ - Fixed icons within the bookmark widget not being displayed correctly when minimized vertically. ([#27801](https://github.com/brave/brave-browser/issues/27801))
+ - Fixed placeholder text within search widget not being updated when changing default search engine. ([#27749](https://github.com/brave/brave-browser/issues/27749))
+ - Fixed legacy widgets not being removed from current widget list after updating profile. ([#27757](https://github.com/brave/brave-browser/issues/27757))
+ - Fixed text under the permission request modals when using dark theme. ([#27767](https://github.com/brave/brave-browser/issues/27767))
+ - Upgraded Chromium to 109.0.5414.119. ([#28011](https://github.com/brave/brave-browser/issues/28011)) ([Changelog for 109.0.5414.119](https://chromium.googlesource.com/chromium/src/+log/109.0.5414.87..109.0.5414.119?pretty=fuller&n=1000))
+
+## [1.47.175](https://github.com/brave/brave-browser/releases/tag/v1.47.175)
+
+ - Fixed several crashes related to the permission request modals for Brave Rewards and Privacy Report. ([#27810](https://github.com/brave/brave-browser/issues/27810)) ([#27809](https://github.com/brave/brave-browser/issues/27809))
+ - Fixed crash when viewing ad notifications in certain cases. ([#27808](https://github.com/brave/brave-browser/issues/27808))
+
+## [1.47.172](https://github.com/brave/brave-browser/releases/tag/v1.47.172)
+
+ - Added Solana DApp support for Brave Wallet. ([#27527](https://github.com/brave/brave-browser/issues/27527))
+ - Added support for "$removeparam" adblock filter syntax under brave://settings/shields/filters. ([#23927](https://github.com/brave/brave-browser/issues/23927))
+ - Added "Connecting to selected custodian temporarily unavailable" error modal in Brave Rewards. ([#25125](https://github.com/brave/brave-browser/issues/25125))
+ - Added widget onboarding and updated widget previews to remove Chrome defaults. ([#22875](https://github.com/brave/brave-browser/issues/22875))
+ - Added ability to scroll through "Top Sites" on the New Tab Page. ([#26942](https://github.com/brave/brave-browser/issues/26942))
+ - [Security] Improved browser privacy by reducing high resolution timer precision as reported on HackerOne by joe12387. ([#24681](https://github.com/brave/brave-browser/issues/24681))
+ - [Security] Improved URL bar by always displaying eTLD+1 URLs. ([#26155](https://github.com/brave/brave-browser/issues/26155))
+ - Improved asset discovery for Brave Wallet. ([#25820](https://github.com/brave/brave-browser/issues/25820))
+ - Improved performance of cosmetic filtering in third-party iframes. ([#26212](https://github.com/brave/brave-browser/issues/26212))
+ - Updated permission request modals for Brave Rewards and Privacy Report when Android notifications are not enabled during onboarding or have been disabled. ([#27032](https://github.com/brave/brave-browser/issues/27032))
+ - Disabled the paint preview feature by default. ([#25123](https://github.com/brave/brave-browser/issues/25123))
+ - Removed "Restore" tab from "Manage Brave Rewards" modal. ([#26338](https://github.com/brave/brave-browser/issues/26338))
+ - Removed known tracking parameter "vgo_ee" from URLs. ([#26295](https://github.com/brave/brave-browser/issues/26295))
+ - Fixed NFT details page displaying as a token and listing all available accounts. ([#23507](https://github.com/brave/brave-browser/issues/23507))
+ - Fixed Brave News crash which occurred when certain characters were at the end of the title or description field. ([#26604](https://github.com/brave/brave-browser/issues/26604))
+ - Fixed default search engine for private tabs not updating until all private tabs have been closed. ([#25821](https://github.com/brave/brave-browser/issues/25821))
+ - Upgraded Chromium to 109.0.5414.87. ([#27710](https://github.com/brave/brave-browser/issues/27710)) ([Changelog for 109.0.5414.87](https://chromium.googlesource.com/chromium/src/+log/108.0.5359.128..109.0.5414.87?pretty=fuller&n=1000))
+
+## [1.46.154](https://github.com/brave/brave-browser/releases/tag/v1.46.154)
+
+ - Removed Wyre for buying crypto in Brave Wallet. ([#27681](https://github.com/brave/brave-browser/issues/27681))
+
+## [1.46.146](https://github.com/brave/brave-browser/releases/tag/v1.46.146)
+
+ - Added close button ("X") under Brave Rewards tipping banner. ([#26744](https://github.com/brave/brave-browser/issues/26744))
+ - Updated Brave Wallet to sign Solana transactions with selected account instead of fee payer. ([#27051](https://github.com/brave/brave-browser/issues/27051))
+ - Fixed crash during Brave Rewards onboarding when selecting country on both Android 6 and 7. ([#26286](https://github.com/brave/brave-browser/issues/26286))
+ - Fixed "Support this creator" not being displayed under the Brave Rewards tipping banner. ([#26740](https://github.com/brave/brave-browser/issues/26740))
+ - Fixed several spacing issues on Brave Rewards tipping banner when using tablet devices. ([#26739](https://github.com/brave/brave-browser/issues/26739))
+ - Upgraded Chromium to 108.0.5359.128. ([#27351](https://github.com/brave/brave-browser/issues/27351)) ([Changelog for 108.0.5359.128](https://chromium.googlesource.com/chromium/src/+log/108.0.5359.99..108.0.5359.128?pretty=fuller&n=1000))
+
 ## [1.46.138](https://github.com/brave/brave-browser/releases/tag/v1.46.138)
 
  - Fixed performance issue where fingerprint farbling caused some sites to load slowly or not at all. ([#26700](https://github.com/brave/brave-browser/issues/26700))
