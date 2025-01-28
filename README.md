@@ -1,5 +1,4 @@
-# Brave Browser
-
+![Brave Browser](./docs/source/_static/Brave.svg)
 
 ## Overview
 
@@ -7,7 +6,7 @@ This repository holds the build tools needed to build the Brave desktop browser 
 
   - [Chromium](https://chromium.googlesource.com/chromium/src.git)
     - Fetches code via `depot_tools`.
-    - sets the branch for Chromium (ex: 65.0.3325.181).
+    - Sets the branch for Chromium (ex: 65.0.3325.181).
   - [brave-core](https://github.com/brave/brave-core)
     - Mounted at `src/brave`.
     - Maintains patches for 3rd party Chromium code.
@@ -18,12 +17,6 @@ This repository holds the build tools needed to build the Brave desktop browser 
 ## Downloads
 
 You can [visit our website](https://brave.com/download) to get the latest stable release.
-
-## Other repositories
-
-For other versions of our browser, please see:
-
-* iOS - [brave/brave-ios](https://github.com/brave/brave-ios)
 
 ## Contributing
 
@@ -38,13 +31,14 @@ Our [Wiki](https://github.com/brave/brave-browser/wiki) also has some useful tec
 
 Help us translate Brave to your language by submitting translations at https://explore.transifex.com/brave/brave_en/.
 
-Follow [@brave](https://twitter.com/brave) on Twitter for important news and announcements.
+Follow [@brave](https://x.com/brave) on X for important news and announcements.
 
 ## Install prerequisites
 
 Follow the instructions for your platform:
 
 - [macOS](https://github.com/brave/brave-browser/wiki/macOS-Development-Environment)
+- [iOS](https://github.com/brave/brave-browser/wiki/iOS-Development-Environment)
 - [Windows](https://github.com/brave/brave-browser/wiki/Windows-Development-Environment)
 - [Linux/Android](https://github.com/brave/brave-browser/wiki/Linux-Development-Environment)
 
@@ -63,6 +57,7 @@ npm install
 npm run init
 ```
 brave-core based android builds should use `npm run init -- --target_os=android --target_arch=arm` (or whichever CPU type you want to build for)
+brave-core based iOS builds should use `npm run init -- --target_os=ios`
 
 You can also set the target_os and target_arch for init and build using:
 
@@ -73,7 +68,7 @@ npm config set target_arch arm
 
 Additional parameters needed to build are documented at https://github.com/brave/brave-browser/wiki/Build-configuration
 
-Internal developers can find more information at https://github.com/brave/devops/wiki/npm-config-for-Brave-Developers
+Internal developers can find more information at https://github.com/brave/devops/wiki/%60.env%60-config-for-Brave-Developers
 
 ## Build Brave
 The default build type is component.
@@ -92,6 +87,8 @@ npm run build Release
 
 brave-core based android builds should use `npm run build -- --target_os=android --target_arch=arm` or set the npm config variables as specified above for `init`
 
+brave-core based iOS builds should use the Xcode project found in `ios/brave-ios/App`. You can open this project directly or run `npm run ios_bootstrap -- --open_xcodeproj` to have it opened in Xcode. See the [iOS Developer Environment](https://github.com/brave/brave-browser/wiki/iOS-Development-Environment#Building) for more information on iOS builds.
+
 ### Build Configurations
 
 Running a release build with `npm run build Release` can be very slow and use a lot of RAM, especially on Linux with the Gold LLVM plugin.
@@ -108,8 +105,6 @@ To run a debug build (Component build with is_debug=true):
 npm run build -- Debug
 ```
 NOTE: the build will take a while to complete. Depending on your processor and memory, it could potentially take a few hours.
-
-Brave staff may also want to try [Goma](https://github.com/brave/devops/wiki/Faster-browser-builds#goma) for faster builds.
 
 ## Run Brave
 To start the build:
@@ -187,7 +182,11 @@ brave-browser> npm run apply_patches
 1. **Google Safe Browsing**: Get an API key with SafeBrowsing API enabled from https://console.developers.google.com/. Update the `GOOGLE_API_KEY` environment variable with your key as per https://www.chromium.org/developers/how-tos/api-keys to enable Google SafeBrowsing.
 
 # Development
-- Security rules: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/security/rules.md
+
+- [Security rules from Chromium](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/security/rules.md)
+- [IPC review guidelines](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/security/ipc-reviews.md) (in particular [this reference](https://docs.google.com/document/d/1Kw4aTuISF7csHnjOpDJGc7JYIjlvOAKRprCTBVWw_E4/edit#heading=h.84bpc1e9z1bg))
+- [Brave's internal security guidelines](https://github.com/brave/internal/wiki/Pull-request-security-audit-checklist) (for employees only)
+- [Rust usage](https://github.com/brave/brave-core/blob/master/docs/rust.md)
 
 # Troubleshooting
 
